@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include <iostream>
 using std::exception;
 using std::cout;
@@ -36,14 +36,14 @@ public:
 	T pop_front();
 	T removeAt(const int& index);
 	T insert(T nData, const int& index);
-	T changeData(const int& index, const T& newData); //  Изменение значения с заданным номером в списке 
-	bool isThereData(T findData);  // Опрос наличия заданного значения
+	T changeData(const int& index, const T& newData); //  РР·РјРµРЅРµРЅРёРµ Р·РЅР°С‡РµРЅРёСЏ СЃ Р·Р°РґР°РЅРЅС‹Рј РЅРѕРјРµСЂРѕРј РІ СЃРїРёСЃРєРµ 
+	bool isThereData(T findData);  // РћРїСЂРѕСЃ РЅР°Р»РёС‡РёСЏ Р·Р°РґР°РЅРЅРѕРіРѕ Р·РЅР°С‡РµРЅРёСЏ
 	int findPositionOfData(const T& findData);
 	int getSize() { return this->size; }
 	bool isEmpty();
 	Node* end() { return this->ficNode; }
 
-	class MyIterator //вложенный класс,выполняющий функции итератора
+	class MyIterator //РІР»РѕР¶РµРЅРЅС‹Р№ РєР»Р°СЃСЃ,РІС‹РїРѕР»РЅСЏСЋС‰РёР№ С„СѓРЅРєС†РёРё РёС‚РµСЂР°С‚РѕСЂР°
 	{
 		MyList<T>* list;
 		Node* currentNode;
@@ -77,7 +77,7 @@ public:
 			return true;
 		}
 
-		bool operator!=(Node* otherNode) // Обнаружение конца списка (фиктивного узла)
+		bool operator!=(Node* otherNode) // РћР±РЅР°СЂСѓР¶РµРЅРёРµ РєРѕРЅС†Р° СЃРїРёСЃРєР° (С„РёРєС‚РёРІРЅРѕРіРѕ СѓР·Р»Р°)
 		{
 			if (this->currentNode == otherNode)
 				return false;
@@ -164,7 +164,7 @@ T MyList<T>::pop_front()
 	try
 	{
 		if (isEmpty())
-			throw exception("Ошибка удаления. Список пуст.\n");
+			throw exception("РћС€РёР±РєР° СѓРґР°Р»РµРЅРёСЏ. РЎРїРёСЃРѕРє РїСѓСЃС‚.\n");
 
 		Node* deleteNode = this->ficNode->pNext;
 		this->ficNode->pNext = deleteNode->pNext;
@@ -189,9 +189,9 @@ T MyList<T>::pop_back()
 	try
 	{
 		if (isEmpty())
-			throw exception("Ошибка удаления. Список пуст\n");
+			throw exception("РћС€РёР±РєР° СѓРґР°Р»РµРЅРёСЏ. РЎРїРёСЃРѕРє РїСѓСЃС‚\n");
 
-		// Поиск предпоследнего узла.
+		// РџРѕРёСЃРє РїСЂРµРґРїРѕСЃР»РµРґРЅРµРіРѕ СѓР·Р»Р°.
 		Node* previous = this->ficNode;
 		while (previous->pNext->pNext != ficNode)
 			previous = previous->pNext;
@@ -222,7 +222,7 @@ T MyList<T>::removeAt(const int& index)
 	try
 	{
 		if (index >= this->size || index < 0)
-			throw exception("Ошибка удаления. Такого индекса не существует.\n");
+			throw exception("РћС€РёР±РєР° СѓРґР°Р»РµРЅРёСЏ. РўР°РєРѕРіРѕ РёРЅРґРµРєСЃР° РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚.\n");
 		else if (index == 0)
 			return pop_front();
 		else if (index == this->size - 1)
@@ -254,7 +254,7 @@ T MyList<T>::insert(T nData, const int& index)
 	try
 	{
 		if (index >= this->size || index < 0)
-			throw exception("Ошибка добавления. Такого индекса не существует.\n");
+			throw exception("РћС€РёР±РєР° РґРѕР±Р°РІР»РµРЅРёСЏ. РўР°РєРѕРіРѕ РёРЅРґРµРєСЃР° РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚.\n");
 		else if (index == 0)
 			return push_front(nData);
 		else if (index == this->size - 1)
@@ -285,9 +285,9 @@ T MyList<T>::changeData(const int& index, const T& newData)
 	try
 	{
 		if (index >= this->size || index < 0)
-			throw exception("Ошибка изменения узла. Такого индекса не существует.\n");
+			throw exception("РћС€РёР±РєР° РёР·РјРµРЅРµРЅРёСЏ СѓР·Р»Р°. РўР°РєРѕРіРѕ РёРЅРґРµРєСЃР° РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚.\n");
 		else if (isEmpty())
-			throw exception("Ошибка изменения узла. Список пуст");
+			throw exception("РћС€РёР±РєР° РёР·РјРµРЅРµРЅРёСЏ СѓР·Р»Р°. РЎРїРёСЃРѕРє РїСѓСЃС‚");
 		else
 		{
 			Node* previous = this->ficNode->pNext;
@@ -333,6 +333,6 @@ int MyList<T>::findPositionOfData(const T& findData)
 		index++;
 	}
 
-	// Если мы прошли весь список и не нашли нужный элемент.
-	throw exception("Такого элемента не найдено!\n");
+	// Р•СЃР»Рё РјС‹ РїСЂРѕС€Р»Рё РІРµСЃСЊ СЃРїРёСЃРѕРє Рё РЅРµ РЅР°С€Р»Рё РЅСѓР¶РЅС‹Р№ СЌР»РµРјРµРЅС‚.
+	throw exception("РўР°РєРѕРіРѕ СЌР»РµРјРµРЅС‚Р° РЅРµ РЅР°Р№РґРµРЅРѕ!\n");
 }

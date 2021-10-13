@@ -1,4 +1,4 @@
-#include <iostream>
+п»ї#include <iostream>
 #include "MyList.h"
 using namespace std;
 
@@ -32,63 +32,63 @@ void changeDataOnIterPosition(MyList<int>& numsList, MyList<int>::MyIterator& it
 {
 	if (numsList.isEmpty())
 	{
-		cout << "Ошибка. Список пуст." << endl;
+		cout << "РћС€РёР±РєР°. РЎРїРёСЃРѕРє РїСѓСЃС‚." << endl;
 		return;
 	}
 
-	cout << "Старое значение итератора = " << *iter << endl;
-	cout << "~ Введите новое значение итератора: ";
+	cout << "РЎС‚Р°СЂРѕРµ Р·РЅР°С‡РµРЅРёРµ РёС‚РµСЂР°С‚РѕСЂР° = " << *iter << endl;
+	cout << "~ Р’РІРµРґРёС‚Рµ РЅРѕРІРѕРµ Р·РЅР°С‡РµРЅРёРµ РёС‚РµСЂР°С‚РѕСЂР°: ";
 	*iter = enterNumsAndCheck(MIN_INT, MAX_INT);
 
-	cout << "Новое значение на позиции итератора = " << *iter << endl;
+	cout << "РќРѕРІРѕРµ Р·РЅР°С‡РµРЅРёРµ РЅР° РїРѕР·РёС†РёРё РёС‚РµСЂР°С‚РѕСЂР° = " << *iter << endl;
 }
 
 void moveIteratorForward(MyList<int>& numsList, MyList<int>::MyIterator& iter)
 {
 	if (numsList.isEmpty())
 	{
-		cout << "Ошибка. Список пуст." << endl;
+		cout << "РћС€РёР±РєР°. РЎРїРёСЃРѕРє РїСѓСЃС‚." << endl;
 		return;
 	}
 
 	iter++;
-	cout << "Новое значение итератора = " << *iter << endl;
+	cout << "РќРѕРІРѕРµ Р·РЅР°С‡РµРЅРёРµ РёС‚РµСЂР°С‚РѕСЂР° = " << *iter << endl;
 }
 
 void dataOfIterator(MyList<int>& numsList, MyList<int>::MyIterator& iter)
 {
 	if (numsList.isEmpty())
 	{
-		cout << "Ошибка. Список пуст." << endl;
+		cout << "РћС€РёР±РєР°. РЎРїРёСЃРѕРє РїСѓСЃС‚." << endl;
 		return;
 	}
 
-	cout << "Значение на позиции итератора = " << *iter << endl;
+	cout << "Р—РЅР°С‡РµРЅРёРµ РЅР° РїРѕР·РёС†РёРё РёС‚РµСЂР°С‚РѕСЂР° = " << *iter << endl;
 }
 
 void iteratorBegin(MyList<int>& numsList, MyList<int>::MyIterator& iter)
 {
 	if (numsList.isEmpty())
 	{
-		cout << "Ошибка. Список пуст." << endl;
+		cout << "РћС€РёР±РєР°. РЎРїРёСЃРѕРє РїСѓСЃС‚." << endl;
 		return;
 	}
 
 	int data = iter.begin();
-	cout << "Итератор установлен на начало, его значение: " << data << endl;
+	cout << "РС‚РµСЂР°С‚РѕСЂ СѓСЃС‚Р°РЅРѕРІР»РµРЅ РЅР° РЅР°С‡Р°Р»Рѕ, РµРіРѕ Р·РЅР°С‡РµРЅРёРµ: " << data << endl;
 }
 
 void findPositionOfDataInList(MyList<int>& numsList)
 {
 	int value, index;
-	cout << "~ Введите искомое значение, для получения его индекса: ";
+	cout << "~ Р’РІРµРґРёС‚Рµ РёСЃРєРѕРјРѕРµ Р·РЅР°С‡РµРЅРёРµ, РґР»СЏ РїРѕР»СѓС‡РµРЅРёСЏ РµРіРѕ РёРЅРґРµРєСЃР°: ";
 	value = enterNumsAndCheck(MIN_INT, MAX_INT);
 
 	try
 	{
 		index = numsList.findPositionOfData(value);
 
-		cout << "Индекс элемента: " << index << endl;
+		cout << "РРЅРґРµРєСЃ СЌР»РµРјРµРЅС‚Р°: " << index << endl;
 	}
 	catch (const exception& ex)
 	{
@@ -99,19 +99,19 @@ void findPositionOfDataInList(MyList<int>& numsList)
 void findData(MyList<int>& numsList)
 {
 	int value;
-	cout << "~ Введите искомое значение в списке: ";
+	cout << "~ Р’РІРµРґРёС‚Рµ РёСЃРєРѕРјРѕРµ Р·РЅР°С‡РµРЅРёРµ РІ СЃРїРёСЃРєРµ: ";
 	value = enterNumsAndCheck(MIN_INT, MAX_INT);
 
-	cout << "Есть ли такое значение? " << std::boolalpha << numsList.isThereData(value) << endl;
+	cout << "Р•СЃС‚СЊ Р»Рё С‚Р°РєРѕРµ Р·РЅР°С‡РµРЅРёРµ? " << std::boolalpha << numsList.isThereData(value) << endl;
 }
 
 void changeDataInList(MyList<int>& numsList)
 {
 	int index, value;
-	cout << "Размер списка = " << numsList.getSize() << endl;
-	cout << "~ Введите индекс, для изменения элемента: ";
+	cout << "Р Р°Р·РјРµСЂ СЃРїРёСЃРєР° = " << numsList.getSize() << endl;
+	cout << "~ Р’РІРµРґРёС‚Рµ РёРЅРґРµРєСЃ, РґР»СЏ РёР·РјРµРЅРµРЅРёСЏ СЌР»РµРјРµРЅС‚Р°: ";
 	index = enterNumsAndCheck(MIN_INT, MAX_INT);
-	cout << "~ Введите значение: ";
+	cout << "~ Р’РІРµРґРёС‚Рµ Р·РЅР°С‡РµРЅРёРµ: ";
 	value = enterNumsAndCheck(MIN_INT, MAX_INT);
 
 	numsList.changeData(index, value);
@@ -120,9 +120,9 @@ void changeDataInList(MyList<int>& numsList)
 void removeAtInList(MyList<int>& numsList)
 {
 	int index;
-	cout << "Размер списка: " << numsList.getSize() << endl;
-	cout << "~ Введите индекс, для удаления элемента: ";
-	index = enterNumsAndCheck(MIN_INT, MAX_INT); // Демонстрация обработки исключений.
+	cout << "Р Р°Р·РјРµСЂ СЃРїРёСЃРєР°: " << numsList.getSize() << endl;
+	cout << "~ Р’РІРµРґРёС‚Рµ РёРЅРґРµРєСЃ, РґР»СЏ СѓРґР°Р»РµРЅРёСЏ СЌР»РµРјРµРЅС‚Р°: ";
+	index = enterNumsAndCheck(MIN_INT, MAX_INT); // Р”РµРјРѕРЅСЃС‚СЂР°С†РёСЏ РѕР±СЂР°Р±РѕС‚РєРё РёСЃРєР»СЋС‡РµРЅРёР№.
 
 	numsList.removeAt(index);
 }
@@ -132,12 +132,12 @@ void insertToList(MyList<int>& numsList)
 	int index;
 	int value;
 
-	cout << "Размер списка = " << numsList.getSize() << endl;
+	cout << "Р Р°Р·РјРµСЂ СЃРїРёСЃРєР° = " << numsList.getSize() << endl;
 
-	cout << "~ Введите индекс: ";
+	cout << "~ Р’РІРµРґРёС‚Рµ РёРЅРґРµРєСЃ: ";
 	index = enterNumsAndCheck(MIN_INT, MAX_INT);
 
-	cout << "~ Введите значение: ";
+	cout << "~ Р’РІРµРґРёС‚Рµ Р·РЅР°С‡РµРЅРёРµ: ";
 	value = enterNumsAndCheck(MIN_INT, MAX_INT);
 
 	numsList.insert(value, index);
@@ -146,7 +146,7 @@ void insertToList(MyList<int>& numsList)
 void pushBackToList(MyList<int>& numsList)
 {
 	int value;
-	cout << "~ Введите значение для вставки в конец: ";
+	cout << "~ Р’РІРµРґРёС‚Рµ Р·РЅР°С‡РµРЅРёРµ РґР»СЏ РІСЃС‚Р°РІРєРё РІ РєРѕРЅРµС†: ";
 	value = enterNumsAndCheck(MIN_INT, MAX_INT);
 	numsList.push_back(value);
 }
@@ -154,7 +154,7 @@ void pushBackToList(MyList<int>& numsList)
 void pushFrontToList(MyList<int>& numsList)
 {
 	int value;
-	cout << "~ Введите значение для вставки в начало: ";
+	cout << "~ Р’РІРµРґРёС‚Рµ Р·РЅР°С‡РµРЅРёРµ РґР»СЏ РІСЃС‚Р°РІРєРё РІ РЅР°С‡Р°Р»Рѕ: ";
 	value = enterNumsAndCheck(MIN_INT, MAX_INT);
 	numsList.push_front(value);
 }
@@ -163,12 +163,12 @@ void outputList(MyList<int>& numsList, MyList<int>::MyIterator iter)
 {
 	if (numsList.isEmpty())
 	{
-		cout << "Ошибка. Список пуст.\n";
+		cout << "РћС€РёР±РєР°. РЎРїРёСЃРѕРє РїСѓСЃС‚.\n";
 		return;
 	}
 
 	iter.begin();
-	cout << "Размер списка: " << numsList.getSize() << endl;;
+	cout << "Р Р°Р·РјРµСЂ СЃРїРёСЃРєР°: " << numsList.getSize() << endl;;
 	for (iter; iter != numsList.end(); iter++)
 		cout << *iter << endl;
 }
@@ -184,7 +184,7 @@ void fillManually(MyList<int>& numsList, const int& size)
 	int value;
 	for (int i = 0; i < size; i++)
 	{
-		cout << "~ Введите число: ";
+		cout << "~ Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ: ";
 		value = enterNumsAndCheck(MIN_INT, MAX_INT);
 		numsList.push_back(value);
 	}
@@ -193,16 +193,16 @@ void fillManually(MyList<int>& numsList, const int& size)
 void fillList(MyList<int>& numsList)
 {
 	if (!(numsList.isEmpty()))
-		numsList.clear(); // Очищаем список перед заполнением новыми данными.
+		numsList.clear(); // РћС‡РёС‰Р°РµРј СЃРїРёСЃРѕРє РїРµСЂРµРґ Р·Р°РїРѕР»РЅРµРЅРёРµРј РЅРѕРІС‹РјРё РґР°РЅРЅС‹РјРё.
 
 	int size;
 	int item;
-	cout << "~ Введите желаемый размер списка: ";
+	cout << "~ Р’РІРµРґРёС‚Рµ Р¶РµР»Р°РµРјС‹Р№ СЂР°Р·РјРµСЂ СЃРїРёСЃРєР°: ";
 	size = enterNumsAndCheck(1, MAX_INT);
 
-	cout << "1. Заполнить список автоматически\n";
-	cout << "2. Заполнить список самостоятельно\n";
-	cout << "~ Ваш выбор: ";
+	cout << "1. Р—Р°РїРѕР»РЅРёС‚СЊ СЃРїРёСЃРѕРє Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё\n";
+	cout << "2. Р—Р°РїРѕР»РЅРёС‚СЊ СЃРїРёСЃРѕРє СЃР°РјРѕСЃС‚РѕСЏС‚РµР»СЊРЅРѕ\n";
+	cout << "~ Р’Р°С€ РІС‹Р±РѕСЂ: ";
 	item = enterNumsAndCheck(1, 2);
 	if (item == 1)
 		fillAutomaticaly(numsList, size);
@@ -235,19 +235,19 @@ bool actionByChoice(MyList<int>& numsList, MyList<int>::MyIterator& iter, const 
 	case 3:
 	{
 		numsList.clear();
-		cout << "Список очищен!\n";
+		cout << "РЎРїРёСЃРѕРє РѕС‡РёС‰РµРЅ!\n";
 		break;
 	}
 
 	case 4:
 	{
-		cout << "Список пуст? " << std::boolalpha << numsList.isEmpty() << endl;
+		cout << "РЎРїРёСЃРѕРє РїСѓСЃС‚? " << std::boolalpha << numsList.isEmpty() << endl;
 		break;
 	}
 
 	case 5:
 	{
-		cout << "Размер списка: " << numsList.getSize() << endl;
+		cout << "Р Р°Р·РјРµСЂ СЃРїРёСЃРєР°: " << numsList.getSize() << endl;
 		break;
 	}
 
@@ -335,7 +335,7 @@ bool actionByChoice(MyList<int>& numsList, MyList<int>::MyIterator& iter, const 
 	}
 	}
 
-	cout << "Нажмите \"Enter\", чтобы продолжить.\n";
+	cout << "РќР°Р¶РјРёС‚Рµ \"Enter\", С‡С‚РѕР±С‹ РїСЂРѕРґРѕР»Р¶РёС‚СЊ.\n";
 	cin.get();
 	cin.get();
 
@@ -354,39 +354,39 @@ int enterNumsAndCheck(const int& MIN, const int& MAX)
 			cin.clear();
 
 		cin.ignore(100, '\n');
-		cout << "Неверное значение, проверьте правильность ввода.\n";
+		cout << "РќРµРІРµСЂРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ, РїСЂРѕРІРµСЂСЊС‚Рµ РїСЂР°РІРёР»СЊРЅРѕСЃС‚СЊ РІРІРѕРґР°.\n";
 	}
 }
 
 int printMenu(void)
 {
-	cout << "\n~~~~~~~~~~~~~~~~~~ Меню ~~~~~~~~~~~~~~~~~~\n";
-	cout << "1. Заполнение списка\n";
-	cout << "2. Вывод списка на экран\n";
-	cout << "3. Очистка списка\n";
-	cout << "4. Проверка, пустой список\n";
-	cout << "5. Получить размер списка\n";
-	cout << "6. Добавить новый элемент в начало\n";
-	cout << "7. Добавить новый элемент в конец\n";
-	cout << "8. Вставить элемент по индексу\n";
-	cout << "9. Удалить первый элемент\n";
-	cout << "10. Удалить последний элемент\n";
-	cout << "11. Удалить элемент по индексу\n";
-	cout << "12. Изменить элемент по индексу\n";
-	cout << "13. Проверить наличие значения в списке\n";
-	cout << "14. Получить индекс значения в списке\n";
-	cout << "15. Установить итератор на начало списка\n";
-	cout << "16. Получить значение на позиции итератора\n";
-	cout << "17. Передвинуть итератор вперёд\n"; // TODO
-	cout << "18. Изменить значение на позиции итератора\n"; // TODO
-	cout << "19. ОЧИСТИТЬ КОНСОЛЬ\n";
-	cout << "0. Выход\n\n";
+	cout << "\n~~~~~~~~~~~~~~~~~~ РњРµРЅСЋ ~~~~~~~~~~~~~~~~~~\n";
+	cout << "1. Р—Р°РїРѕР»РЅРµРЅРёРµ СЃРїРёСЃРєР°\n";
+	cout << "2. Р’С‹РІРѕРґ СЃРїРёСЃРєР° РЅР° СЌРєСЂР°РЅ\n";
+	cout << "3. РћС‡РёСЃС‚РєР° СЃРїРёСЃРєР°\n";
+	cout << "4. РџСЂРѕРІРµСЂРєР°, РїСѓСЃС‚РѕР№ СЃРїРёСЃРѕРє\n";
+	cout << "5. РџРѕР»СѓС‡РёС‚СЊ СЂР°Р·РјРµСЂ СЃРїРёСЃРєР°\n";
+	cout << "6. Р”РѕР±Р°РІРёС‚СЊ РЅРѕРІС‹Р№ СЌР»РµРјРµРЅС‚ РІ РЅР°С‡Р°Р»Рѕ\n";
+	cout << "7. Р”РѕР±Р°РІРёС‚СЊ РЅРѕРІС‹Р№ СЌР»РµРјРµРЅС‚ РІ РєРѕРЅРµС†\n";
+	cout << "8. Р’СЃС‚Р°РІРёС‚СЊ СЌР»РµРјРµРЅС‚ РїРѕ РёРЅРґРµРєСЃСѓ\n";
+	cout << "9. РЈРґР°Р»РёС‚СЊ РїРµСЂРІС‹Р№ СЌР»РµРјРµРЅС‚\n";
+	cout << "10. РЈРґР°Р»РёС‚СЊ РїРѕСЃР»РµРґРЅРёР№ СЌР»РµРјРµРЅС‚\n";
+	cout << "11. РЈРґР°Р»РёС‚СЊ СЌР»РµРјРµРЅС‚ РїРѕ РёРЅРґРµРєСЃСѓ\n";
+	cout << "12. РР·РјРµРЅРёС‚СЊ СЌР»РµРјРµРЅС‚ РїРѕ РёРЅРґРµРєСЃСѓ\n";
+	cout << "13. РџСЂРѕРІРµСЂРёС‚СЊ РЅР°Р»РёС‡РёРµ Р·РЅР°С‡РµРЅРёСЏ РІ СЃРїРёСЃРєРµ\n";
+	cout << "14. РџРѕР»СѓС‡РёС‚СЊ РёРЅРґРµРєСЃ Р·РЅР°С‡РµРЅРёСЏ РІ СЃРїРёСЃРєРµ\n";
+	cout << "15. РЈСЃС‚Р°РЅРѕРІРёС‚СЊ РёС‚РµСЂР°С‚РѕСЂ РЅР° РЅР°С‡Р°Р»Рѕ СЃРїРёСЃРєР°\n";
+	cout << "16. РџРѕР»СѓС‡РёС‚СЊ Р·РЅР°С‡РµРЅРёРµ РЅР° РїРѕР·РёС†РёРё РёС‚РµСЂР°С‚РѕСЂР°\n";
+	cout << "17. РџРµСЂРµРґРІРёРЅСѓС‚СЊ РёС‚РµСЂР°С‚РѕСЂ РІРїРµСЂС‘Рґ\n"; // TODO
+	cout << "18. РР·РјРµРЅРёС‚СЊ Р·РЅР°С‡РµРЅРёРµ РЅР° РїРѕР·РёС†РёРё РёС‚РµСЂР°С‚РѕСЂР°\n"; // TODO
+	cout << "19. РћР§РРЎРўРРўР¬ РљРћРќРЎРћР›Р¬\n";
+	cout << "0. Р’С‹С…РѕРґ\n\n";
 
-	cout << "~ Ваш выбор: ";
+	cout << "~ Р’Р°С€ РІС‹Р±РѕСЂ: ";
 	return enterNumsAndCheck(MIN_OPTION, MAX_OPTION);
 }
 
-// Только для Windows. Используется system("cls")
+// РўРѕР»СЊРєРѕ РґР»СЏ Windows. РСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ system("cls")
 int main()
 {
 	setlocale(LC_ALL, "rus");
